@@ -2,7 +2,7 @@ repeat task.wait() until game.GameId ~= 0
 
 if Parvus and Parvus.Game then
     Parvus.Utilities.UI:Notification({
-        Title = "🎃 Parvus Hub",
+        Title = "JYT",
         Description = "Script already running!",
         Duration = 5
     }) return
@@ -33,17 +33,17 @@ local function Concat(Array,Separator)
 end
 
 local function GetScript(Script)
-    return Parvus.Debug and readfile("Parvus/" .. Script .. ".lua")
+    return Parvus.Debug and readfile("BadB/" .. Script .. ".lua")
     or game:HttpGetAsync(("%s%s.lua"):format(Parvus.Domain,Script))
 end
 
 local function LoadScript(Script)
-    return loadstring(Parvus.Debug and readfile("Parvus/" .. Script .. ".lua")
+    return loadstring(Parvus.Debug and readfile("BadB/" .. Script .. ".lua")
     or game:HttpGetAsync(("%s%s.lua"):format(Parvus.Domain,Script)))()
 end
 
 getgenv().Parvus = {Debug = LoadArgs[1],Utilities = {},
-    Domain = "https://raw.githubusercontent.com/AlexR32/Parvus/main/",Games = {
+    Domain = "https://raw.githubusercontent.com/Duper47/BadB/main/",Games = {
         ["Universal" ] = {Name = "Universal",                 Script = "Universal" },
         ["1168263273"] = {Name = "Bad Business",              Script = "Games/BB"  },
         ["1586272220"] = {Name = "Steel Titans",              Script = "Games/ST"  },
@@ -63,7 +63,7 @@ local SupportedGame = GetSupportedGame()
 LocalPlayer.OnTeleport:Connect(function(State)
     if State == Enum.TeleportState.Started then
         QueueOnTeleport(([[local LoadArgs = {%s}
-        loadstring(LoadArgs[1] and readfile("Parvus/Loader.lua") or
+        loadstring(LoadArgs[1] and readfile("UwU/Loader.lua") or
         game:HttpGetAsync("%sLoader.lua"))(unpack(LoadArgs))
         ]]):format(Concat(LoadArgs,","),Parvus.Domain))
     end
@@ -73,7 +73,7 @@ if SupportedGame then
     Parvus.Game = SupportedGame.Name
     LoadScript(SupportedGame.Script)
     Parvus.Utilities.UI:Notification({
-        Title = "🎃 Parvus Hub",
+        Title = "JYT",
         Description = Parvus.Game .. " loaded!",
         Duration = LoadArgs[2]
     })
