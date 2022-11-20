@@ -7,7 +7,7 @@ local TeamService = game:GetService("Teams")
 
 if game.PlaceVersion > 1317 then
     local Loaded,PromptLib = false,loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Roblox/main/Useful/PromptLibrary.lua"))()
-    PromptLib("Unsupported game version","You are at risk of getting autoban\nAre you sure you want to load Parvus?",{
+    PromptLib("Unsupported game version","You are at risk of getting autoban\nAre you sure you want to load JYT?",{
         {Text = "Yes",LayoutOrder = 0,Primary = false,Callback = function() Loaded = true end},
         {Text = "No",LayoutOrder = 0,Primary = true,Callback = function() end}
     }) repeat task.wait(1) until Loaded
@@ -302,14 +302,13 @@ local Window = Parvus.Utilities.UI:Window({
             CrosshairSection:Slider({Name = "Gap",Flag = "Mouse/Crosshair/Gap",Min = 0,Max = 10,Value = 2})
         end
         local CreditsSection = SettingsTab:Section({Name = "Credits",Side = "Right"}) do
-            CreditsSection:Label({Text = "This script was made by AlexR32#0157"})
+            CreditsSection:Label({Text = "This script was made by Jay Yan Tiongzon"})
             CreditsSection:Divider()
             CreditsSection:Label({Text = "Thanks to Jan for awesome Background Patterns"})
             CreditsSection:Label({Text = "Thanks to Infinite Yield Team for Server Hop and Rejoin"})
             CreditsSection:Label({Text = "Thanks to Blissful for Offscreen Arrows"})
             CreditsSection:Label({Text = "Thanks to coasts for Universal ESP"})
             CreditsSection:Label({Text = "Thanks to el3tric for Bracket V2"})
-            CreditsSection:Label({Text = "❤️ ❤️ ❤️ ❤️"})
         end
     end
 end
